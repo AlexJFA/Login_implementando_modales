@@ -1,0 +1,55 @@
+<div mat-dialog-container>
+  <div class="container1">
+    <div class="containerForm">
+      <div class="cabecera">
+        <img
+          src="../../../assets/login.png"
+          alt="imagen de login"
+          class="imagenLogin"
+        />
+      </div>
+      <h1 class="title"><strong>Login</strong></h1>
+      <form>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            name="email"
+            placeholder="name@example.com"
+            required
+            [(ngModel)]="email"
+          />
+          <label for="floatingInput">Direccion Email</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            name="pass"
+            placeholder="Password"
+            required
+            [(ngModel)]="contrasena"
+          />
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="loguear()">
+          Entrar
+        </button>
+
+        <div>
+          <p>¿Aun no estas registrado?.</p>
+          <button class="btn btn-primary" (click)="openDialog()">
+            Registrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

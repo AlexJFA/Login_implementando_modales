@@ -1,0 +1,105 @@
+<div mat-dialog-container>
+  <div class="container1">
+    <div class="containerForm">
+      <div class="cabecera">
+        <div>
+          <img
+          src="../../../assets/login.png"
+          alt="imagen de login"
+          class="imagenLogin"
+        />
+      </div>
+      <div class="title">
+        <h1 ><strong>Registro</strong></h1>
+      </div>
+      </div>
+      
+      <form>
+        <div class="form-floating mb-3" >
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="name"
+            placeholder="nombre"
+            [(ngModel)]="nombre"
+            required
+          />
+          <label for="floatingInput">Nombre</label>
+        </div>
+        <div class="form-floating mb-3" >
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            name="apellido"
+            placeholder="apellido"
+            required
+            [(ngModel)]="apellido"
+          />
+          <label for="floatingInput">Apellido</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            name="email"
+            placeholder="name@example.com"
+            [(ngModel)]="email"
+            required
+          />
+          <label for="floatingInput">Direccion Email</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            name="pass"
+            placeholder="Password"
+            [(ngModel)]="contrasena"
+            required
+          />
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+        </div>
+
+        <!--llamamos al modal-->
+        <button type="submit" class="btn btn-primary" (click)="registrar(); agg()" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+          Registrar
+        </button>
+
+        <!--Modal de bootstrap-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Registro Exitoso!.</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Bienvenido {{nombre + " " + apellido}} ya puedes iniciar sesión.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="registrar">
+          <p>¿Ya estas registrado?.</p>
+          <button class="btn btn-primary" (click)="loguear()">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

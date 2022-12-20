@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "primerloginalex": {
+      "hosting": {
+        "practica1": [
+          "primerloginalex"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "primerloginalex"
+  }
+}

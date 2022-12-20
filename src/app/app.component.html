@@ -1,0 +1,72 @@
+<nav class="navbar">
+  <div class="">
+    <a class="navbar-brand">
+      <img
+        src="https://imgs.search.brave.com/vYIxRwKn61ZnnD8QW3tb8mHI3mpMgdGHXDfHUQAnEms/rs:fit:48:48:1/g:ce/aHR0cHM6Ly93d3cu/c2hhcmVpY29uLm5l/dC9kYXRhLzQ4eDQ4/LzIwMTYvMDcvMDgv/MTE3NTQ4X2dvb2ds/ZV81MTJ4NTEyLnBu/Zw"
+        alt="Logo Firebase"
+        width="30"
+        height="24"
+      />
+      Firebase
+    </a>
+  </div>
+
+  <!-- muestra correo del usuario logueado cuando la variable datos no es undefined -->
+  <div class="usuarioLogueado" *ngIf="datos != undefined">
+    <div>
+      <a class="navbar-brand"> {{ datos }} </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container0">
+  <div class="container1">
+    <div class="title">
+      <div>
+        <h1 class="titulo">
+          <strong>{{ title }}</strong>
+        </h1>
+        <!-- muestra el boton cuando  la variable datos es undefined -->
+        <button
+          *ngIf="datos == undefined"
+          (click)="openDialog()"
+          class="btn btn-primary btn-primary_bienvenido"
+        >
+          <strong>BIENVENIDO</strong>
+        </button>
+
+        <!-- muestra el boton cuando  la variable datos no es undefined -->
+        <button
+          *ngIf="datos != undefined"
+          type="button"
+          class="btn btn-primary btn-primary_logout"
+          (click)="logout()"
+        >
+          <strong>DESLOGUEAR</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container2">
+    <div>
+      <h2 class="lista-titullo"><strong>LISTA DE USUARIOS LOCALES</strong></h2>
+      <div class="lista">
+        <strong
+          ><ol>
+            <!-- necesitamos hacer que se muestren los usuarios que se van registrando en el array-->
+            <li *ngFor="let item of user; let i = index">
+              <!-- Irteramos sobre el array "user" -->
+              <p>
+                <strong>{{
+                  item.data.nombre + " " + item.data.apellido
+                }}</strong>
+              </p>
+              <!-- Acedemos a la propiedad del objeto que devuelve a travez del servicio "usuarioService.disparadorDeUsuario.subscribe()" -->
+            </li>
+          </ol>
+        </strong>
+      </div>
+    </div>
+  </div>
+</div>

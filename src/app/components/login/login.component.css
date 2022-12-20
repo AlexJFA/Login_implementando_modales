@@ -1,0 +1,23 @@
+.containerForm,
+.btn {
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-check,
+p {
+  margin-top: 0.5rem;
+}
+
+.cabecera,
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 128, 255);
+}
+
+.imagenLogin {
+  height: 80px;
+  width: 80px;
+}
