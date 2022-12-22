@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     public dialog: MatDialog,
     private usuariosService: UsuariosService
   ) {}
+  
   ngOnInit(): void {}
 
   loguear() {
@@ -56,5 +57,7 @@ export class LoginComponent implements OnInit {
         maxHeight: '670px',
       });
     }
+    
   }
+
 }
