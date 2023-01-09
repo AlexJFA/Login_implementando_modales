@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit {
     //cierra el modal de login
     this.matDialogRef.close();
 
-    if (screen.width <= 500) {
+    if (screen.width <= 550) {
       this.dialog.open(RegistreComponent, {
         maxWidth: '100vw',
         width: '95%',
-        maxHeight: '670px',
+        maxHeight: '650px',
       });
     } else {
       this.dialog.open(RegistreComponent, {
